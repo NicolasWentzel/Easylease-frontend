@@ -11,7 +11,7 @@ const { checkBodyFront } = require("../modules/checkBody");
 
 function NewClient() {
   // Définir l'état local pour les champs de formulaire
-  let BACKEND_ADDRESS = "https://easylease-backend.vercel.app";
+  let BACKEND_ADDRESS = "https://easylease-backend-nine.vercel.app";
 
   const user = useSelector((state) => state.user.value);
   const [name, setName] = useState("");
@@ -70,13 +70,12 @@ function NewClient() {
 
   const handleNewInterlocutorSubmit = () => {
     if (
-      !checkBodyFront(
-        [
-          interlocFirstName,
-          interlocName,
-          interlocMail,
-          phoneNumber,
-          interlocJob,
+      !checkBodyFront([
+        interlocFirstName,
+        interlocName,
+        interlocMail,
+        phoneNumber,
+        interlocJob,
       ])
     ) {
       setCheckBodyNonValid(true);
@@ -275,7 +274,11 @@ function NewClient() {
             >
               Ajout Interlocuteur
             </button>
-            {CheckBodyNonValid && <p style={{fontSize: 16, color: "red", margin: 10}}>Champs vides ou manquants !</p>}
+            {CheckBodyNonValid && (
+              <p style={{ fontSize: 16, color: "red", margin: 10 }}>
+                Champs vides ou manquants !
+              </p>
+            )}
           </div>
 
           <div className={style.buttonNewClientContainer}></div>

@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "./Navbar";
 import style from "../styles/NewScenario.module.css";
-import styles from "../styles/Settings.module.css"
+import styles from "../styles/Settings.module.css";
 import { Modal } from "antd";
 import { useRouter } from "next/router";
 import { useSelector, useDispatch } from "react-redux";
@@ -113,7 +113,7 @@ function NewScenario() {
 
   // const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
 
-  let BACKEND_ADDRESS = "https://easylease-backend.vercel.app";
+  let BACKEND_ADDRESS = "https://easylease-backend-nine.vercel.app";
   const [selectionClient, setSelectionClient] = useState("");
   const [clientFromCard, setClientFromCard] = useState("");
   const [creationDate, setCreationDate] = useState(
@@ -259,7 +259,7 @@ function NewScenario() {
       .then((response) => response.json())
       .then((data) => {
         if (data.result) {
-          setHandleBeforeDeleteModal(false)
+          setHandleBeforeDeleteModal(false);
           setModalDeleteSuccess(true);
           setOldScenario(false);
           setCreationDate(date.toISOString().substring(0, 10));
@@ -306,8 +306,8 @@ function NewScenario() {
           setOldScenario(true);
           setSelectionClient("");
           setInterval(() => {
-            window.location.assign('/allScenario');
-          }, 900)
+            window.location.assign("/allScenario");
+          }, 900);
         } else {
           // console.log("DATA =>", data);
           setModalSaveFailed(true);
@@ -505,7 +505,7 @@ function NewScenario() {
 
   const beforeDeletion = () => {
     setHandleBeforeDeleteModal(true);
-  }
+  };
 
   return (
     <>
@@ -637,7 +637,10 @@ function NewScenario() {
                 </button>
               )}
               {oldScenario && (
-                <button className={style.button} onClick={() => beforeDeletion()}>
+                <button
+                  className={style.button}
+                  onClick={() => beforeDeletion()}
+                >
                   Supprimer
                 </button>
               )}
@@ -881,25 +884,31 @@ function NewScenario() {
               ✅ Interlocuteur ajouté ! ✅
             </p>
           </Modal>
-          <Modal footer={null} open={handleBeforeDeleteModal} onCancel={() => setHandleBeforeDeleteModal(false)}>
-                <div className={styles.modalContainer}>
-                  <span className={styles.paragraphe}>Etes vous sur de vouloir supprimer ce scénario ?</span>
-                  <div className={styles.buttonsConfirmation}>
-                  <button
-                    className={styles.button + " " + styles.deleteAccount}
-                    onClick={() => deletion()}
-                  >
-                    Oui
-                  </button>
-                  <button
-                    className={styles.button + " " + styles.right}
-                    onClick={() => setHandleBeforeDeleteModal(false)}
-                  >
-                    Non
-                  </button>
-                  </div>
-                </div>
-              </Modal>
+          <Modal
+            footer={null}
+            open={handleBeforeDeleteModal}
+            onCancel={() => setHandleBeforeDeleteModal(false)}
+          >
+            <div className={styles.modalContainer}>
+              <span className={styles.paragraphe}>
+                Etes vous sur de vouloir supprimer ce scénario ?
+              </span>
+              <div className={styles.buttonsConfirmation}>
+                <button
+                  className={styles.button + " " + styles.deleteAccount}
+                  onClick={() => deletion()}
+                >
+                  Oui
+                </button>
+                <button
+                  className={styles.button + " " + styles.right}
+                  onClick={() => setHandleBeforeDeleteModal(false)}
+                >
+                  Non
+                </button>
+              </div>
+            </div>
+          </Modal>
         </div>
       </div>
     </>

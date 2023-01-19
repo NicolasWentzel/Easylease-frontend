@@ -12,7 +12,7 @@ function Login() {
   // URL de redirection pour les conditions d'utilisations //
   const url = "https://google.com";
   // Adresse du backend
-  const BACKEND_ADDRESS = "https://easylease-backend.vercel.app";
+  const BACKEND_ADDRESS = "https://easylease-backend-nine.vercel.app";
 
   // Récuperation du login et MDP pour la connexion (user déja créer) //
   const [username, setUsername] = useState("");
@@ -79,7 +79,7 @@ function Login() {
   };
 
   const handleClick = () => {
-    window.open('/Conditions.pdf', '_blank');
+    window.open("/Conditions.pdf", "_blank");
   };
 
   const handleSubmit = () => {
@@ -191,7 +191,12 @@ function Login() {
               Connexion
             </button>
           </div>
-          <a href="#" className={styles.textContent} rel="noreferrer" onClick={handleClick}>
+          <a
+            href="#"
+            className={styles.textContent}
+            rel="noreferrer"
+            onClick={handleClick}
+          >
             Conditions d'utilisation
           </a>
         </div>

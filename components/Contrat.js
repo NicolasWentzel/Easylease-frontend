@@ -10,7 +10,7 @@ import { useRouter } from "next/router";
 function Contrat() {
   const router = useRouter();
 
-  const BACKEND_ADDRESS = "https://easylease-backend-nine.vercel.app";
+  const BACKEND_ADDRESS = "https://easylease-backend-chi.vercel.app";
   const ContratReducer = useSelector((state) => state.contrat.value);
   const [dataContrat, setDataContrat] = useState([]);
   const [dataInterlocutor, setDataInterlocutor] = useState([]);

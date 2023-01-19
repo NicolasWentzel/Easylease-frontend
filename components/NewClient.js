@@ -11,7 +11,7 @@ const { checkBodyFront } = require("../modules/checkBody");
 
 function NewClient() {
   // Définir l'état local pour les champs de formulaire
-  let BACKEND_ADDRESS = "https://easylease-backend-nine.vercel.app";
+  let BACKEND_ADDRESS = "https://easylease-backend-chi.vercel.app";
 
   const user = useSelector((state) => state.user.value);
   const [name, setName] = useState("");

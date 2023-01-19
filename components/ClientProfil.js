@@ -26,7 +26,7 @@ function ClientProfil() {
   const [contrat, setContrat] = useState("");
   const [handleBeforeDeleteModal, setHandleBeforeDeleteModal] = useState(false);
 
-  const backend_adress = "https://easylease-backend-chi.vercel.app";
+  const backend_adress = "https://easylease-back.vercel.app";
 
   const clientBirthDate = new Date(clientBirth);
   const clientBirthDateFormated = clientBirthDate.toLocaleDateString();

@@ -12,7 +12,7 @@ function Login() {
   // URL de redirection pour les conditions d'utilisations //
   const url = "https://google.com";
   // Adresse du backend
-  const BACKEND_ADDRESS = "https://easylease-backend-chi.vercel.app";
+  const BACKEND_ADDRESS = "https://easylease-back.vercel.app";
 
   // Récuperation du login et MDP pour la connexion (user déja créer) //
   const [username, setUsername] = useState("");

@@ -8,7 +8,7 @@ import { useRouter } from "next/router";
 import { logout } from "../reducers/user";
 
 const Settings = () => {
-  const BACKEND_ADDRESS = "https://easylease-backend-chi.vercel.app";
+  const BACKEND_ADDRESS = "https://easylease-back.vercel.app";
   const user = useSelector((state) => state.user.value);
   const [emailSettings, setEmail] = useState(user.email);
   const [currentPassword, setCurrentPassword] = useState("");

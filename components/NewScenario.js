@@ -113,7 +113,7 @@ function NewScenario() {
 
   // const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
 
-  let BACKEND_ADDRESS = "https://easylease-backend-chi.vercel.app";
+  const BACKEND_ADDRESS = "https://easylease-back.vercel.app";
   const [selectionClient, setSelectionClient] = useState("");
   const [clientFromCard, setClientFromCard] = useState("");
   const [creationDate, setCreationDate] = useState(
